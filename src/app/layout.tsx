@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers"; 
-
+import GoogleTranslate from "@/components/GoogleTranslate";
 // Cấu hình Be Vietnam Pro với đầy đủ weight và subset tiếng Việt
 const beVietnamPro = Be_Vietnam_Pro({ 
   subsets: ["latin", "vietnamese"], 
@@ -36,6 +36,7 @@ export default function RootLayout({
         // Xóa 'font-poppins', thay bằng 'font-sans' (được định nghĩa trong globals.css)
         className={`${beVietnamPro.variable} ${greatVibes.variable} font-sans bg-black text-white antialiased`}
       >
+        <GoogleTranslate />
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -1,5 +1,47 @@
 @import "tailwindcss";
+/* src/app/globals.css */
 
+/* --- HACK GOOGLE TRANSLATE --- */
+/* Ẩn thanh công cụ dịch phía trên cùng */.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+body > .skiptranslate {
+    display: none !important;
+}
+
+/* 2. QUAN TRỌNG: Đẩy body lên lại vị trí cũ (Google tự thêm top: 40px) */
+body {
+    top: 0px !important;
+    position: static !important; 
+}
+
+/* 3. Ẩn các tooltip (popup) khó chịu khi di chuột vào chữ đã dịch */
+.goog-tooltip {
+    display: none !important;
+}
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+/* 4. Xóa nền vàng hoặc xanh khi hover vào văn bản */
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important; 
+    box-shadow: none !important;
+}
+
+/* 5. Ẩn widget gốc nếu chưa ẩn */
+#google_translate_element {
+    display: none !important;
+}
+
+/* 6. Ẩn logo Google nhỏ đôi khi hiện ở góc */
+.goog-logo-link {
+    display: none !important;
+}
+.goog-te-gadget {
+    color: transparent !important;
+}
 @theme {
   /* --- TYPOGRAPHY --- */
   /* Cập nhật dòng này để dùng biến font từ layout.tsx */
@@ -85,5 +127,30 @@
 
   .animate-spin-slow {
     animation: spin-slow 20s linear infinite;
+  }
+  .bg-blueprint-grid {
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  }
+  
+  .bg-blueprint-dark {
+    background-color: #1a1a1a;
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  }
+
+  /* TEXT ARCHITECT STYLE */
+  .font-tech {
+    font-family: 'Courier New', Courier, monospace; /* Hoặc font kỹ thuật bạn thích */
+    letter-spacing: -0.02em;
+  }
+  
+  /* CURSOR CROSSHAIR CHO CẢM GIÁC CAD */
+  .cursor-cad {
+    cursor: crosshair;
   }
 }

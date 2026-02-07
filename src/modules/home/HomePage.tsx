@@ -13,6 +13,7 @@ import {
   NEWS_DATA, 
   CATEGORIES 
 } from './data/heroData';
+import ImageFallback from '@/components/ui/ImageFallback';
 
 // Reusable Components
 const MinimalButton = ({ children, className = "", onClick }: { children: React.ReactNode, className?: string, onClick?: () => void }) => (
@@ -95,10 +96,11 @@ const HomePage = () => {
             >
               {/* Image Container with Ken Burns Effect */}
               <div className="absolute inset-0 overflow-hidden">
-                <Image
+                <ImageFallback
                   src={item.src}
                   alt={item.alt}
                   fill
+                  fallbackType='interior'
                   priority={index === 0}
                   className={`object-cover transition-transform duration-[10s] ease-out ${isActive ? 'scale-110' : 'scale-100'}`}
                 />
@@ -252,7 +254,7 @@ const HomePage = () => {
                <span className="font-sans text-sm font-medium tracking-widest uppercase mb-4 opacity-90 text-[#c49b63] animate-fadeIn">
                  {item.label}
                </span>
-               <h1 className="font-sans text-[32px] md:text-[56px] font-thin leading-tight uppercase max-w-5xl mb-6 tracking-wide">
+               <h1 className="font-sans text-gray-200 text-[32px] md:text-[56px] font-thin leading-tight uppercase max-w-5xl mb-6 tracking-wide">
                  {item.title}
                </h1>
                <div className="w-24 h-[1px] bg-white/50 mb-8" />
@@ -370,7 +372,7 @@ const HomePage = () => {
       </section>
 
       {/* --- 6. CATEGORIES (Giữ nguyên) --- */}
-      <section className="py-24 bg-white border-t border-gray-100">
+      {/* <section className="py-24 bg-white border-t border-gray-100">
         <div className="container mx-auto max-w-[1400px] px-6">
            <h2 className="text-2xl font-light uppercase text-center mb-20 tracking-widest text-gray-900">Thế giới nội thất</h2>
            
@@ -396,7 +398,7 @@ const HomePage = () => {
              ))}
            </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 };

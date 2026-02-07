@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import ImageFallback from "@/components/ui/ImageFallback";
 
 interface BlogProps {
   data: {
@@ -22,7 +23,7 @@ const BlogCard = ({ data }: BlogProps) => {
     <Link href={`/tips/${data.id}`} className="group block h-full flex flex-col">
       {/* Image Wrapper */}
       <div className="relative w-full aspect-[4/3] overflow-hidden mb-6 bg-gray-100">
-        <Image
+        <ImageFallback
           src={data.image}
           alt={data.title}
           fill

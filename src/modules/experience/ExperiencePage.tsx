@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Play } from "lucide-react";
 import ProcessViewer from "./components/ProcessViewer";
 import { SHOWROOM_ZONES } from "./data/experienceData";
+import ImageFallback from "@/components/ui/ImageFallback";
 
 const ExperiencePage = () => {
   return (
@@ -15,10 +15,11 @@ const ExperiencePage = () => {
       <section className="relative w-full h-screen overflow-hidden">
          {/* Giả lập Video Background bằng ảnh + Zoom effect */}
          <div className="absolute inset-0 animate-kenburns">
-            <Image 
+            <ImageFallback 
                 src="https://images.unsplash.com/photo-1522771753035-1a5b6563f3a9?q=80&w=2000&auto=format&fit=crop"
                 alt="Showroom Experience"
                 fill
+                fallbackType="interior"
                 className="object-cover"
                 priority
             />
@@ -57,10 +58,11 @@ const ExperiencePage = () => {
              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                  {SHOWROOM_ZONES.map((zone, idx) => (
                      <div key={idx} className="group relative aspect-[3/4] overflow-hidden cursor-pointer">
-                         <Image 
+                         <ImageFallback 
                              src={zone.img}
                              alt={zone.title}
                              fill
+                             fallbackType="architecture"
                              className="object-cover transition-transform duration-700 group-hover:scale-110"
                          />
                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90" />
@@ -82,7 +84,7 @@ const ExperiencePage = () => {
          <div className="container mx-auto max-w-[1600px] py-24 px-6">
             <div className="flex flex-col md:flex-row items-end justify-between mb-16">
                <h2 className="text-4xl md:text-5xl font-thin uppercase text-gray-900">
-                  Dịch vụ <span className="italic font-serif">Độc quyền</span>
+                  Dịch vụ <span className="italic font-medium">Độc quyền</span>
                </h2>
                <p className="text-gray-500 max-w-md mt-4 md:mt-0 text-right text-sm">
                   Quy trình làm việc chuyên nghiệp, tận tâm từ ý tưởng sơ khởi đến khi hoàn thiện.
@@ -102,7 +104,7 @@ const ExperiencePage = () => {
          </div>
 
          <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-thin uppercase mb-8">
+            <h2 className="text-gray-400 text-4xl md:text-5xl font-thin uppercase mb-8">
                Trải nghiệm thực tế
             </h2>
             <p className="text-gray-400 font-light mb-12 text-lg">

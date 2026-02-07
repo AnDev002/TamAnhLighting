@@ -14,7 +14,7 @@ export const ABOUT_STORY = {
 
 export const FOUNDER_QUOTE = {
   quote: "Chúng tôi không bán đèn. Chúng tôi bán cảm xúc và sự thăng hoa của không gian khi màn đêm buông xuống.",
-  author: "Nguyen Van A",
+  author: "Nguyen Minh Anh",
   role: "Founder & Creative Director",
   avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" // Ảnh tròn
 };

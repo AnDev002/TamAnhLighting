@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import ImageFallback from "@/components/ui/ImageFallback";
 
 interface CollectionProps {
   data: {
@@ -58,10 +59,11 @@ const CollectionShowcase = ({ data, index }: CollectionProps) => {
       <div className="w-full md:w-1/2 bg-[#f4f4f4] flex flex-col gap-4 p-4 md:p-0">
          {/* Ảnh 1: Cover lớn (Full height ban đầu) */}
          <div className="relative w-full h-[60vh] md:h-screen sticky top-0 md:static">
-            <Image 
+            <ImageFallback
                src={data.coverImage}
                alt={data.title}
                fill
+               fallbackType="interior"
                className="object-cover"
             />
             <div className="absolute inset-0 bg-black/10" />
@@ -71,10 +73,11 @@ const CollectionShowcase = ({ data, index }: CollectionProps) => {
          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-12 md:bg-gray-50">
              {data.images.map((img, idx) => (
                  <div key={idx} className={`relative w-full aspect-[3/4] group overflow-hidden ${idx === 2 ? "md:col-span-2 aspect-square md:aspect-[16/9]" : ""}`}>
-                     <Image
+                     <ImageFallback
                         src={img}
                         alt="Collection Detail"
                         fill
+                        fallbackType="interior"
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                      />
                  </div>

@@ -19,7 +19,6 @@ const TipsPage = () => {
 
   return (
     <div className="w-full bg-white min-h-screen">
-      
       {/* --- 1. HERO (FEATURED) --- */}
       <FeaturedPost data={featuredPost} />
 
@@ -27,7 +26,7 @@ const TipsPage = () => {
       <section className="sticky top-[70px] z-30 bg-white/95 backdrop-blur border-b border-gray-100 transition-all">
          <div className="container mx-auto max-w-[1400px] px-6 py-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-               <h2 className="text-2xl font-serif italic text-gray-900">The Journal</h2>
+               <h2 className="text-2xl italic text-gray-900">The Journal</h2>
                
                {/* Filter Tabs */}
                <div className="flex items-center gap-6 md:gap-10 overflow-x-auto no-scrollbar">
@@ -72,7 +71,7 @@ const TipsPage = () => {
             <span className="text-[#c49b63] text-xs font-bold uppercase tracking-[0.2em] mb-4 block">
                Subscribe
             </span>
-            <h3 className="text-3xl md:text-4xl font-serif text-gray-900 mb-6">
+            <h3 className="text-3xl md:text-4xl text-gray-900 mb-6">
                Nhận cảm hứng chiếu sáng mỗi tuần
             </h3>
             <p className="text-gray-500 font-light mb-10 text-sm md:text-base">

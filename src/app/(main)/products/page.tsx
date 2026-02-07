@@ -1,4 +1,5 @@
-import React from 'react';
+// src/app/(main)/products/page.tsx
+import React, { Suspense } from 'react'; // Import Suspense
 import { Metadata } from 'next';
 import ProductPage from '@/modules/products/ProductPage';
 
@@ -8,5 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ProductPage />;
+  return (
+    <Suspense fallback={<div className="w-full h-screen flex items-center justify-center">Loading...</div>}>
+      <ProductPage />
+    </Suspense>
+  );
 }

@@ -15,7 +15,7 @@ const CollectionPage = () => {
              Lookbook
           </h1>
           <p className="max-w-2xl mx-auto text-gray-500 font-light text-sm md:text-base tracking-[0.2em] animate-fade-up delay-100">
-             TUYỂN TẬP CÁC BỘ SƯU TẬP 2024 - 2025
+             TUYỂN TẬP CÁC BỘ SƯU TẬP 2025 - 2026
           </p>
           <div className="w-[1px] h-24 bg-gray-200 mx-auto mt-12 animate-fade-up delay-200" />
       </section>
@@ -33,7 +33,7 @@ const CollectionPage = () => {
 
       {/* --- FOOTER CTA --- */}
       <section className="py-32 px-6 bg-black text-white text-center">
-         <h2 className="text-3xl md:text-5xl font-thin uppercase mb-8">
+         <h2 className="text-3xl text-gray-400 md:text-5xl font-thin uppercase mb-8">
             Bạn chưa tìm thấy phong cách phù hợp?
          </h2>
          <p className="text-gray-400 mb-12 max-w-xl mx-auto font-light">

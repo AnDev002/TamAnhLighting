@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ImageFallback from "@/components/ui/ImageFallback";
 
 interface FeaturedProps {
   data: {
@@ -17,11 +18,11 @@ interface FeaturedProps {
 
 const FeaturedPost = ({ data }: FeaturedProps) => {
   return (
-    <section className="relative w-full h-[60vh] md:h-[70vh] flex items-end overflow-hidden group">
+    <section className="relative w-full h-[60vh] md:h-[70vh] flex items-end overflow-hidden group top-32">
        <Link href={`/tips/${data.id}`} className="absolute inset-0 z-20" />
        
        {/* Background Image */}
-       <Image 
+       <ImageFallback 
           src={data.image}
           alt={data.title}
           fill

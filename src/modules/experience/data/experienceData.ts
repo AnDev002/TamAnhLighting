@@ -20,13 +20,6 @@ export const EXPERIENCE_STEPS = [
     description: "Sản phẩm được chế tác thủ công từ các nghệ nhân Châu Âu, nhập khẩu nguyên chiếc và được kiểm định nghiêm ngặt trước khi đến tay khách hàng.",
     image: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?q=80&w=2000&auto=format&fit=crop"
   },
-  {
-    id: "04",
-    title: "Lắp Đặt & Bảo Tác",
-    subtitle: "White-Glove Installation",
-    description: "Dịch vụ lắp đặt tiêu chuẩn 5 sao. Đội ngũ kỹ thuật viên tay nghề cao đảm bảo sự hoàn hảo đến từng chi tiết nhỏ nhất.",
-    image: "https://images.unsplash.com/photo-1581578731117-104f2a8065a7?q=80&w=2000&auto=format&fit=crop"
-  }
 ];
 
 export const SHOWROOM_ZONES = [

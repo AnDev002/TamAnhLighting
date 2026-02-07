@@ -16,7 +16,7 @@ const AboutPage = () => {
             <span className="text-[#c49b63] text-xs font-bold uppercase tracking-[0.3em] mb-6 block animate-fade-up">
                 Est. 2012
             </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-gray-900 mb-8 leading-tight animate-fade-up delay-100">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl text-gray-900 mb-8 leading-tight animate-fade-up delay-100">
                 Chúng tôi kể chuyện <br/> bằng <span className="italic text-gray-400">ánh sáng.</span>
             </h1>
             <div className="w-[1px] h-20 bg-gray-300 mx-auto animate-fade-up delay-200" />
@@ -31,7 +31,7 @@ const AboutPage = () => {
                {/* Left: Text & Circle */}
                <div className="relative order-2 lg:order-1">
                   <div className="relative z-10">
-                     <h2 className="text-3xl md:text-5xl font-serif text-gray-900 mb-8 leading-tight">
+                     <h2 className="text-3xl md:text-5xl text-gray-900 mb-8 leading-tight">
                         {ABOUT_STORY.title}
                      </h2>
                      <div className="space-y-6 text-gray-500 font-light text-base md:text-lg leading-relaxed text-justify">
@@ -43,7 +43,7 @@ const AboutPage = () => {
                      <div className="grid grid-cols-3 gap-8 mt-12 border-t border-gray-100 pt-8">
                         {ABOUT_STORY.stats.map((stat, idx) => (
                            <div key={idx}>
-                              <span className="block text-3xl font-serif text-[#c49b63]">{stat.value}</span>
+                              <span className="block text-3xl text-[#c49b63]">{stat.value}</span>
                               <span className="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 mt-1 block">{stat.label}</span>
                            </div>
                         ))}
@@ -100,7 +100,7 @@ const AboutPage = () => {
          <div className="container mx-auto max-w-4xl text-center px-6 relative z-10">
             <Star className="w-6 h-6 text-[#c49b63] mx-auto mb-10" fill="#c49b63" />
             
-            <h3 className="text-3xl md:text-5xl font-serif italic leading-snug text-gray-900 mb-10">
+            <h3 className="text-3xl md:text-5xl italic leading-snug text-gray-900 mb-10">
                "{FOUNDER_QUOTE.quote}"
             </h3>
             
@@ -123,9 +123,9 @@ const AboutPage = () => {
                {VALUES.map((val, idx) => (
                   <div key={idx} className="group text-center px-6">
                      <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#c49b63] group-hover:text-white transition-colors duration-500">
-                        <span className="font-serif font-bold text-lg">{idx + 1}</span>
+                        <span className="font-bold text-lg">{idx + 1}</span>
                      </div>
-                     <h3 className="text-xl font-serif text-gray-900 mb-4">{val.title}</h3>
+                     <h3 className="text-xl text-gray-900 mb-4">{val.title}</h3>
                      <p className="text-gray-500 font-light text-sm leading-relaxed">
                         {val.desc}
                      </p>
@@ -148,7 +148,7 @@ const AboutPage = () => {
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
                 {PARTNERS_LOGOS.map((brand, idx) => (
-                    <span key={idx} className="text-2xl md:text-3xl font-serif text-gray-800 font-bold hover:text-[#c49b63] cursor-default transition-colors">
+                    <span key={idx} className="text-2xl md:text-3xl text-gray-800 font-bold hover:text-[#c49b63] cursor-default transition-colors">
                        {brand}
                     </span>
                 ))}

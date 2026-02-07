@@ -4,6 +4,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+// Import data danh mục để render link động
+import categories from "@/data/product-categories";
 import { 
   ArrowRight, 
   Facebook, 
@@ -22,22 +24,19 @@ const SOCIAL_LINKS = [
   { icon: Linkedin, href: "#" },
 ];
 
-const FOOTER_LINKS = {
-  products: [
-    { label: "Đèn Chùm Pha Lê", href: "/products/crystal" },
-    { label: "Đèn Thả Nghệ Thuật", href: "/products/pendant" },
-    { label: "Smart Lighting", href: "/products/smart" },
-    { label: "Architectural Light", href: "/products/architectural" },
-    { label: "Bộ Sưu Tập 2024", href: "/collections/2024" },
-  ],
-  support: [
+// Tạo link sản phẩm động từ file data, trỏ về trang products kèm query param
+const PRODUCT_FOOTER_LINKS = categories.slice(0, 5).map(cat => ({
+    label: cat.name,
+    href: `/products?category=${cat.slug}`
+}));
+
+const SUPPORT_LINKS = [
     { label: "Chính Sách Bảo Hành", href: "/policy/warranty" },
     { label: "Vận Chuyển & Lắp Đặt", href: "/policy/shipping" },
     { label: "Hướng Dẫn Mua Hàng", href: "/guide" },
     { label: "Catalogue Download", href: "/catalogue" },
     { label: "Dự Án Doanh Nghiệp", href: "/b2b" },
-  ]
-};
+];
 
 const Footer = () => {
   return (
@@ -83,7 +82,7 @@ const Footer = () => {
               Trở Thành Đối Tác
             </h3>
             <p className="text-white/60 text-sm font-light max-w-sm text-center mb-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-              Hợp tác cùng EuroLight để mang kiệt tác ánh sáng đến mọi công trình Việt.
+              Hợp tác cùng Tam Anh Lighting để mang kiệt tác ánh sáng đến mọi công trình Việt.
             </p>
             <button className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] border-b border-[#c49b63] pb-1 hover:text-[#c49b63] transition-colors">
               Đăng ký ngay <ArrowRight size={14} />
@@ -125,7 +124,7 @@ const Footer = () => {
              <div>
                <Link href="/" className="inline-block">
                 <span className="text-3xl font-bold uppercase tracking-[0.15em] text-white">
-                    Euro<span className="text-[#c49b63]">Light</span>
+                    Tam Anh<span className="text-[#c49b63]">Lighting</span>
                 </span>
                </Link>
                <p className="mt-6 text-white/50 text-sm font-light leading-7 max-w-xs">
@@ -145,11 +144,11 @@ const Footer = () => {
              </div>
           </div>
 
-          {/* Col 2: Products */}
+          {/* Col 2: Products (Dynamic) */}
           <div>
             <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white mb-8">Sản Phẩm</h4>
             <ul className="flex flex-col gap-4">
-              {FOOTER_LINKS.products.map((link) => (
+              {PRODUCT_FOOTER_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-white/60 text-[15px] font-light hover:text-[#c49b63] hover:pl-2 transition-all duration-300 flex items-center gap-2 group">
                     <span className="w-0 h-[1px] bg-[#c49b63] group-hover:w-3 transition-all duration-300"></span>
@@ -157,6 +156,11 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              {/* <li>
+                  <Link href="/products" className="text-white/40 text-xs font-bold uppercase tracking-widest hover:text-[#c49b63] mt-2 inline-block">
+                    Xem tất cả &rarr;
+                  </Link>
+              </li> */}
             </ul>
           </div>
 
@@ -164,7 +168,7 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-white mb-8">Hỗ Trợ</h4>
             <ul className="flex flex-col gap-4">
-              {FOOTER_LINKS.support.map((link) => (
+              {SUPPORT_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-white/60 text-[15px] font-light hover:text-[#c49b63] hover:pl-2 transition-all duration-300 flex items-center gap-2 group">
                      <span className="w-0 h-[1px] bg-[#c49b63] group-hover:w-3 transition-all duration-300"></span>
@@ -203,9 +207,9 @@ const Footer = () => {
                    <Phone size={18} strokeWidth={1.5} />
                    <span className="text-lg text-white font-light group-hover:text-[#c49b63] transition-colors">1800 28 28 06</span>
                 </a>
-                <a href="mailto:info@eurolight.vn" className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group">
+                <a href="mailto:info@tamanh.vn" className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group">
                    <Mail size={18} strokeWidth={1.5} />
-                   <span className="text-sm font-light group-hover:text-[#c49b63] transition-colors">info@eurolight.vn</span>
+                   <span className="text-sm font-light group-hover:text-[#c49b63] transition-colors">info@tamanh.vn</span>
                 </a>
              </div>
           </div>
